@@ -1,0 +1,159 @@
+{
+    "tables": {
+        "ingress::tbl_encap": {
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "ip_dst": {
+                            "value": "192.168.66.77"
+                        }, 
+                        "eth_dst": {
+                            "value": "00:32:33:34:35:DD"
+                        }, 
+                        "ip_src": {
+                            "value": "192.168.55.44"
+                        }, 
+                        "vni": {
+                            "value": "0x1234"
+                        }, 
+                        "eth_src": {
+                            "value": "00:02:03:04:05:55"
+                        }
+                    }, 
+                    "type": "ingress::do_encap"
+                }, 
+                "name": "do_encap"
+            }
+        }, 
+        "ingress::tbl_forward": {
+            "rules": [
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.0"
+                            }, 
+                            "is_transit": {
+                                "value": "0"
+                            }, 
+                            "device_id": {
+                                "value": "0x1111"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.0", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "p4"
+                            }, 
+                            "is_transit": {
+                                "value": "0"
+                            }, 
+                            "device_id": {
+                                "value": "0xA5A5"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "p0", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.3"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "drop"
+                        }, 
+                        "is_transit": {
+                            "value": "0"
+                        }, 
+                        "device_id": {
+                            "value": "0xA6A6"
+                        }
+                    }, 
+                    "type": "ingress::do_forward"
+                }, 
+                "name": "default_fwd"
+            }
+        }, 
+        "egress::tbl_ioam_payload_add": {
+            "default_rule": {
+                "action": {
+                    "type": "egress::do_ioam_payload_add"
+                }, 
+                "name": "add_payload"
+            }
+        }, 
+        "ingress::tbl_forward_clone": {
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "p4"
+                        }, 
+                        "device_id": {
+                            "value": "0xA7A7"
+                        }
+                    }, 
+                    "type": "ingress::do_forward_clone"
+                }, 
+                "name": "default_fwd_clone"
+            }
+        }, 
+        "egress::tbl_ioam_meta_fwd": {
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "meta_proc_eth_src": {
+                            "value": "00:02:03:04:05:66"
+                        }, 
+                        "meta_proc_eth_dst": {
+                            "value": "00:32:33:34:35:EE"
+                        }, 
+                        "meta_proc_ip_src": {
+                            "value": "192.168.55.48"
+                        }, 
+                        "meta_proc_ip_dst": {
+                            "value": "192.168.66.26"
+                        }, 
+                        "meta_proc_udp_dport": {
+                            "value": "54321"
+                        }
+                    }, 
+                    "type": "egress::do_ioam_meta_fwd"
+                }, 
+                "name": "default"
+            }
+        }, 
+        "egress::tbl_decap_orig": {
+            "default_rule": {
+                "action": {
+                    "type": "egress::do_decap_orig"
+                }, 
+                "name": "orig_decap"
+            }
+        }, 
+        "ingress::tbl_decap_clone": {
+            "default_rule": {
+                "action": {
+                    "type": "ingress::do_decap_clone"
+                }, 
+                "name": "decap_clone"
+            }
+        }
+    }
+}

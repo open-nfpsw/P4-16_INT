@@ -1,0 +1,347 @@
+{
+    "tables": {
+        "ingress::tbl_encap": {}, 
+        "ingress::tbl_forward_clone": {}, 
+        "ingress::tbl_forward": {
+            "rules": [
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.1"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x2222"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.0", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.0"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.3"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x3333"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.2", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.5"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x4444"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.4", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.4"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.7"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x5555"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.6", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.6"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.9"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x6666"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.8", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.8"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.11"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x7777"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.10", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.10"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.13"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x8888"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.12", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.12"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.15"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0x9999"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.14", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.14"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.17"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0xaaaa"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.16", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.16"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.19"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0xbbbb"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.18", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.18"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.21"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0xcccc"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.20", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.20"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.23"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0xdddd"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.22", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.22"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.25"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0xeeee"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.24", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.24"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "espec": {
+                                "value": "v0.27"
+                            }, 
+                            "is_transit": {
+                                "value": "1"
+                            }, 
+                            "device_id": {
+                                "value": "0xffff"
+                            }
+                        }, 
+                        "type": "ingress::do_forward"
+                    }, 
+                    "name": "v0.26", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.26"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "espec": {
+                            "value": "drop"
+                        }, 
+                        "is_transit": {
+                            "value": "0"
+                        }, 
+                        "device_id": {
+                            "value": "0xdead"
+                        }
+                    }, 
+                    "type": "ingress::do_forward"
+                }, 
+                "name": "default_fwd"
+            }
+        }, 
+        "egress::tbl_ioam_payload_add": {
+            "default_rule": {
+                "action": {
+                    "type": "egress::do_ioam_payload_add"
+                }, 
+                "name": "add_payload"
+            }
+        }, 
+        "egress::tbl_decap_orig": {}, 
+        "egress::tbl_ioam_meta_fwd": {}, 
+        "ingress::tbl_decap_clone": {}, 
+        "ingress::tbl_drop": {}
+    }
+}
