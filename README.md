@@ -5,7 +5,7 @@ demonstrate the use of P4 Inband Network Telemetry on Netronome SmartNICs.
 
 ![demo_setup](https://github.com/open-nfpsw/P4-16_INT/blob/master/demo_setup.png)
 
-###Endpoint -> Transition -> Endpoint
+### Endpoint -> Transition -> Endpoint
 
 The same P4 code is loaded onto all SmartNICs. The 'endpoint' P4 configuration
 file is used to encaptulate the packets with headers to be processed as INT
